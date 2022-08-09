@@ -25,8 +25,10 @@ function App() {
         },
       })
       .then((data) => {
-        if (Array.isArray(data)) setBeers(data);
-        else {
+        if (Array.isArray(data)) {
+          setErrors("");
+          setBeers(data);
+        } else {
           throw new Error("Something Went Wrong!");
         }
       })
