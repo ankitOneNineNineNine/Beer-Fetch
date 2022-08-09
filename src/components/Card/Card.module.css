@@ -1,0 +1,51 @@
+.image-container {
+  width: 15%;
+  height: inherit;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.image-container img {
+  width: 30px;
+}
+.card-container {
+  display: flex;
+  position: relative;
+  width: 48%;
+  box-shadow: 0 0 2px gray;
+  border-radius: 5px;
+  height: 150px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 40px;
+  margin-right: 2px;
+}
+.description-container {
+  text-align: left;
+  width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.tag-line {
+  color: rgb(228, 166, 53);
+}
+.description-container .name {
+  font-weight: bold;
+}
+.description {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 1180px) {
+  .card-container {
+    width: inherit;
+  }
+}
