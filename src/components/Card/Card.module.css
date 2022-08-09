@@ -29,13 +29,15 @@
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 0px;
+  line-height: 1.6rem;
 }
 
 .tag-line {
   color: rgb(228, 166, 53);
 }
 .description-container .name {
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 .description {
   display: -webkit-box !important;
