@@ -23,6 +23,9 @@
   margin-top: 2px;
   margin-left: 2px;
 }
+.error {
+  color: red;
+}
 @media only screen and (max-width: 1180px) {
   .list-container {
     display: block;

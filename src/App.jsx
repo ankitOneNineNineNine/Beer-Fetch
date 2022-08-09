@@ -15,6 +15,7 @@ function App() {
     per_page: 10,
   });
   const [beers, setBeers] = useState([]);
+  const [errors, setErrors] = useState("");
 
   useEffect(() => {
     httpClient
@@ -24,7 +25,13 @@ function App() {
         },
       })
       .then((data) => {
-        setBeers(data);
+        if (Array.isArray(data)) setBeers(data);
+        else {
+          throw new Error("Something Went Wrong!");
+        }
+      })
+      .catch((err) => {
+        setErrors(err);
       });
   }, [paginateOptions]);
 
@@ -38,6 +45,7 @@ function App() {
   return (
     <div className={classes["app-container"]}>
       <h4 className={classes.header}>Beers</h4>
+      {errors && <p className={classes.error}>{errors}</p>}
       <div className={classes["list-container"]}>
         {beers.map((beer) => {
           return (
