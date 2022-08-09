@@ -3,12 +3,19 @@ import { useState } from "react";
 import { httpClient } from "./services/service-axios";
 import { Card } from "./components/Card/Card";
 import classes from "./App.module.css";
+
+/**
+ * React Component for App
+ *
+ * @return JSX.Element
+ */
 function App() {
   const [paginateOptions, setPaginateOptions] = useState({
     page: 1,
     per_page: 10,
   });
   const [beers, setBeers] = useState([]);
+
   useEffect(() => {
     httpClient
       .get("/beers", {
@@ -20,6 +27,7 @@ function App() {
         setBeers(data);
       });
   }, [paginateOptions]);
+
   const loadMore = useCallback(() => {
     setPaginateOptions((options) => ({
       ...options,
