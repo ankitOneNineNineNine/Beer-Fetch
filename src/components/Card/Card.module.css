@@ -4,12 +4,14 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  cursor: pointer;
+  padding: 0;
 }
+
 .image-container img {
   width: 30px;
 }
 .card-container {
+  cursor: pointer;
   display: flex;
   position: relative;
   width: 48%;
@@ -17,16 +19,18 @@
   border-radius: 5px;
   height: 150px;
   align-items: center;
-  padding: 10px;
   margin-bottom: 40px;
   margin-right: 2px;
 }
+
 .description-container {
   text-align: left;
   width: 80%;
   text-overflow: ellipsis;
   overflow: hidden;
+  padding: 0px;
 }
+
 .tag-line {
   color: rgb(228, 166, 53);
 }
