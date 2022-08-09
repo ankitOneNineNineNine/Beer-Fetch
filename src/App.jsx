@@ -11,7 +11,6 @@ import classes from "./App.module.css";
  */
 function App() {
   const [paginateOptions, setPaginateOptions] = useState({
-    page: 1,
     per_page: 10,
   });
   const [beers, setBeers] = useState([]);
@@ -40,12 +39,15 @@ function App() {
   const loadMore = useCallback(() => {
     setPaginateOptions((options) => ({
       ...options,
-      page: options.page + 1,
       per_page: options.per_page + 10,
     }));
   }, []);
+
   return (
     <div className={classes["app-container"]}>
+      {!errors && !beers?.length && (
+        <p className={classes.loading}>Loading ...</p>
+      )}
       <h4 className={classes.header}>Beers</h4>
       {errors && <p className={classes.error}>{errors}</p>}
       <div className={classes["list-container"]}>
